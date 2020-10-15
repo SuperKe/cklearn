@@ -22,9 +22,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="音量控件"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bt_sliding_conflict"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_verification" />
+
+    <Button
+        android:id="@+id/bt_sliding_conflict"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="NestScroll_RecyclerView导致adapter无限加载"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt_volume" />
 
 </android.support.constraint.ConstraintLayout>

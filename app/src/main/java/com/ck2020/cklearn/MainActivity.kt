@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.ck2020.cklearn.customview.verificationview.VerificationActivity
 import com.ck2020.cklearn.customview.volumeview.VolumeActivity
+import com.ck2020.cklearn.sliding_conflict.NestScrollRecyclerActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,9 @@ class MainActivity : AppCompatActivity() {
         }
         bt_volume.setOnClickListener {
             startActivity(VolumeActivity::class.java)
+        }
+        bt_sliding_conflict.setOnClickListener {
+            startActivity(NestScrollRecyclerActivity::class.java)
         }
     }
 

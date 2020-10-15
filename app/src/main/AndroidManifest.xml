@@ -9,8 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".customview.volumeview.VolumeActivity"></activity>
-        <activity android:name=".customview.verificationview.VerificationActivity"></activity>
+        <activity android:name=".sliding_conflict.NestScrollRecyclerActivity"></activity>
+        <activity android:name=".customview.volumeview.VolumeActivity" />
+        <activity android:name=".customview.verificationview.VerificationActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
