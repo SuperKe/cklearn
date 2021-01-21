@@ -1,6 +1,6 @@
 package com.ck2020.cklearn.customview.volumeview
 
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ck2020.cklearn.R
 

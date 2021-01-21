@@ -1,15 +1,14 @@
 package com.ck2020.cklearn.sliding_conflict;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.LinearLayout;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.ck2020.cklearn.customview.Logel;
 
@@ -36,29 +35,29 @@ class MyNestedScrollview extends NestedScrollView implements NestedScrollView.On
         this.context = context;
         setOnScrollChangeListener(this);
         //计算除recylce之外的控件高度
-//        post(new Runnable() {
-//            @Override
-//            public void run() {
-//                if (getChildCount() > 0) {
-//                    //获取到LinearLayout
-//                    View contentView = getChildAt(0);
-//                    if (contentView instanceof LinearLayout) {
-//                        //遍历全部的View，得到recycler以上的view的高度
-//                        if (((LinearLayout) contentView).getChildCount() > 0) {
-//                            for (int i = 0; i < ((LinearLayout) contentView).getChildCount(); i++) {
-//                                final View childView = ((LinearLayout) contentView).getChildAt(i);
-//                                if (childView instanceof RecyclerView) {
-//                                    return;
-//                                }
-//                                totalHeight += childView.getHeight();
-//                                Logel.i("i:" + i);
-//                                Logel.i("totalHeight:" + totalHeight);
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//        });
+        post(new Runnable() {
+            @Override
+            public void run() {
+                if (getChildCount() > 0) {
+                    //获取到LinearLayout
+                    View contentView = getChildAt(0);
+                    if (contentView instanceof LinearLayout) {
+                        //遍历全部的View，得到recycler以上的view的高度
+                        if (((LinearLayout) contentView).getChildCount() > 0) {
+                            for (int i = 0; i < ((LinearLayout) contentView).getChildCount(); i++) {
+                                final View childView = ((LinearLayout) contentView).getChildAt(i);
+                                if (childView instanceof RecyclerView) {
+                                    return;
+                                }
+                                totalHeight += childView.getHeight();
+                                Logel.i("i:" + i);
+                                Logel.i("totalHeight:" + totalHeight);
+                            }
+                        }
+                    }
+                }
+            }
+        });
     }
 
 

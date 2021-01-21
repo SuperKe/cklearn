@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ck2020.cklearn">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +10,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".sliding_conflict.NestScrollRecyclerActivity"></activity>
+        <activity android:name=".coroutine.CoroutineScopeActivity" />
+        <activity android:name=".result_api.BaseResultActivity" />
+        <activity android:name=".result_api.FirstActivity">
+            <intent-filter>
+                <action android:name="com.ck2021.cklean.FIRST" />
+
+                <category android:name="android.intent.category.DEFAULT" /> <!-- 可忽略 -->
+            </intent-filter>
+        </activity>
+        <activity android:name=".result_api.SecondActivity">
+            <intent-filter>
+                <action android:name="com.ck2021.cklean.SECOND" />
+
+                <category android:name="android.intent.category.DEFAULT" /> <!-- 可忽略 -->
+            </intent-filter>
+        </activity>
+        <activity android:name=".handler_demo.HandlerTestActivity" />
+        <activity android:name=".volatile_demo.VolatileDemoActivity" />
+        <activity android:name=".sliding_conflict.NestScrollRecyclerActivity" />
         <activity android:name=".customview.volumeview.VolumeActivity" />
         <activity android:name=".customview.verificationview.VerificationActivity" />
         <activity android:name=".MainActivity">

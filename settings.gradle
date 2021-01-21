@@ -1,2 +1,3 @@
+include ':basiclib'
 include ':app'
 rootProject.name = "cklearn"

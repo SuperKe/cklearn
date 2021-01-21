@@ -3,11 +3,10 @@ package com.ck2020.cklearn.sliding_conflict
 import android.content.Context
 import android.graphics.Point
 import android.os.Bundle
-import android.support.v4.widget.NestedScrollView
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.LinearLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import android.view.WindowManager
 import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.ck2020.cklearn.R

@@ -1,40 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/bt_verification"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="验证码控件"
-        app:layout_constraintBottom_toTopOf="@+id/bt_volume"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        android:text="验证码控件" />
 
     <Button
         android:id="@+id/bt_volume"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="音量控件"
-        app:layout_constraintBottom_toTopOf="@+id/bt_sliding_conflict"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_verification" />
+        android:text="音量控件" />
 
     <Button
         android:id="@+id/bt_sliding_conflict"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="NestScroll_RecyclerView导致adapter无限加载"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt_volume" />
+        android:textAllCaps="false" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/bt_volatile_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="volatile Demo"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_handler_demo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="handler Demo"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_result_api"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="result_api"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_coroutine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="coroutine"
+        android:textAllCaps="false" />
+</LinearLayout>
