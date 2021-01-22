@@ -4,6 +4,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ck2020.cklearn.coroutine.ApiServer
+import com.ck2020.cklearn.coroutine.call.ApiError
+import com.ck2020.cklearn.coroutine.call.ApiResult
 import kotlinx.coroutines.launch
 
 /**
@@ -23,8 +25,14 @@ class MainViewModel : ViewModel() {
     fun translate(word: String) {
         //协程作用域
         viewModelScope.launch {
-            val youDaoResult = ApiServer.mApiRetrofit.translate(word)
-            translateResult.value = youDaoResult.translateResult[0][0].tgt
+            when (val youDaoResult = ApiServer.mApiRetrofit.translate(word)) {
+                is ApiResult.onSuccess -> {
+                    translateResult.value = youDaoResult.data.translateResult[0][0].tgt
+                }
+                is ApiResult.onError -> {
+                    translateResult.value = youDaoResult.errMessage
+                }
+            }
         }
     }
 }
