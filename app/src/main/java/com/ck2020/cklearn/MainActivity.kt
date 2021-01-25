@@ -8,6 +8,7 @@ import com.ck2020.cklearn.customview.verificationview.VerificationActivity
 import com.ck2020.cklearn.customview.volumeview.VolumeActivity
 import com.ck2020.cklearn.databinding.ActivityMainBinding
 import com.ck2020.cklearn.handler_demo.HandlerTestActivity
+import com.ck2020.cklearn.kt.FuncActivity
 import com.ck2020.cklearn.sliding_conflict.NestScrollRecyclerActivity
 import com.ck2020.cklearn.volatile_demo.VolatileDemoActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -44,6 +45,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btCoroutine.setOnClickListener {
             startActivity(CoroutineScopeActivity::class.java)
+        }
+        binding.btExpandHigh.setOnClickListener {
+            startActivity(FuncActivity::class.java)
         }
     }
 

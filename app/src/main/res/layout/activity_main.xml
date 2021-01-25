@@ -53,4 +53,10 @@
         android:layout_height="wrap_content"
         android:text="coroutine"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/bt_expand_high"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="拓展函数/高阶函数" />
 </LinearLayout>
