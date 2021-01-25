@@ -17,7 +17,7 @@ import com.ck2020.cklearn.customview.Logel;
  * @create 2020/7/23
  * @Describe
  */
-class MyNestedScrollview extends NestedScrollView implements NestedScrollView.OnScrollChangeListener {
+public class MyNestedScrollview extends NestedScrollView implements NestedScrollView.OnScrollChangeListener {
 
     public MyNestedScrollview(@NonNull Context context) {
         this(context, null);

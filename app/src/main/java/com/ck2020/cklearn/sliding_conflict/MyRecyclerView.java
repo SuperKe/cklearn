@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
  * @create 2020/7/24
  * @Describe
  */
-class MyRecyclerView extends RecyclerView {
+public class MyRecyclerView extends RecyclerView {
     public MyRecyclerView(@NonNull Context context) {
         this(context, null);
     }
