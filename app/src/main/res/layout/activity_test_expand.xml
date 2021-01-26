@@ -12,4 +12,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="运行拓展函数" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="money1"
+            android:inputType="numberDecimal" />
+
+        <EditText
+            android:id="@+id/et_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="money2"
+            android:inputType="numberDecimal" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="运算符重载" />
 </LinearLayout>
