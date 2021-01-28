@@ -7,6 +7,7 @@ import com.ck2020.cklearn.coroutine.CoroutineScopeActivity
 import com.ck2020.cklearn.customview.verificationview.VerificationActivity
 import com.ck2020.cklearn.customview.volumeview.VolumeActivity
 import com.ck2020.cklearn.databinding.ActivityMainBinding
+import com.ck2020.cklearn.file_read.FileMainActivity
 import com.ck2020.cklearn.handler_demo.HandlerTestActivity
 import com.ck2020.cklearn.kt.FuncActivity
 import com.ck2020.cklearn.sliding_conflict.NestScrollRecyclerActivity
@@ -48,6 +49,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btExpandHigh.setOnClickListener {
             startActivity(FuncActivity::class.java)
+        }
+        binding.btFile.setOnClickListener {
+            startActivity(FileMainActivity::class.java)
         }
     }
 

@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +14,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".kt.high_order_func.TestHighOrderActivity"></activity>
+        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".file_read.FileMainActivity" />
+        <activity android:name=".file_read.FileTestActivity" />
+        <activity android:name=".kt.high_order_func.TestHighOrderActivity" />
         <activity android:name=".kt.FuncActivity" />
         <activity android:name=".kt.expand_func.TestExpandActivity" />
         <activity android:name=".coroutine.CoroutineScopeActivity" />
