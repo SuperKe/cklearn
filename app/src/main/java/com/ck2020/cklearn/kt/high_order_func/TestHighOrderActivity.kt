@@ -3,7 +3,6 @@ package com.ck2020.cklearn.kt.high_order_func
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.blankj.utilcode.util.ToastUtils
-import com.ck2020.cklearn.R
 import com.ck2020.cklearn.databinding.ActivityHighOrderBinding
 
 /**
@@ -41,7 +40,13 @@ class TestHighOrderActivity : AppCompatActivity() {
             val result_ = HighOrderFunc.highOrderFuncSimple(a, b, ::minus)
             ToastUtils.showShort(result_)
         }
+        val result = HighOrderFunc.highOrderFuncSimple(1, 2, sum)
     }
+
+    /**
+     * 函数类型
+     */
+    val sum = { x: Int, y: Int -> x + y }
 
     /**
      * 加
@@ -56,4 +61,14 @@ class TestHighOrderActivity : AppCompatActivity() {
     fun minus(a: Int, b: Int): Int {
         return a.minus(b)
     }
+
+    fun methodA(final2: String) {
+        val final3 = "The parameter is " + final2
+    }
+
+    fun methodB(final2: String) {
+        val final3 = "The parameter is " + final2
+    }
+
+    val d = { b: Int -> b.toString() }
 }
