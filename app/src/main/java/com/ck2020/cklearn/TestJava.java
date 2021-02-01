@@ -7,7 +7,9 @@ package com.ck2020.cklearn;
  */
 class TestJava {
     public static void main(String[] args) {
-
+        String str1 = "123", str2 = "123";
+        System.out.println(str1.equals(str2));
+        System.out.println(str1 == str2);
     }
 
     private void methodA(final String test) {
