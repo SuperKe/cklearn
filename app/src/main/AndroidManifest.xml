@@ -14,7 +14,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BaseActivity"></activity>
+        <activity android:name=".db.RealmTestActivity"></activity>
+        <activity android:name=".BaseActivity" />
         <activity android:name=".file_read.FileMainActivity" />
         <activity android:name=".file_read.FileTestActivity" />
         <activity android:name=".kt.high_order_func.TestHighOrderActivity" />

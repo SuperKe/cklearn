@@ -3,6 +3,7 @@ package com.ck2020.cklearn.file_read
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ck2020.cklearn.databinding.ActivityFileMainBinding
+import com.ck2020.cklearn.db.RealmTestActivity
 import com.ck2020.cklearn.startWithClass
 
 class FileMainActivity : AppCompatActivity() {
@@ -16,6 +17,9 @@ class FileMainActivity : AppCompatActivity() {
         }
         mBind.btFileFile.setOnClickListener {
             startWithClass(FileTestActivity::class.java)
+        }
+        mBind.btFileSql.setOnClickListener {
+            startWithClass(RealmTestActivity::class.java)
         }
     }
 }
