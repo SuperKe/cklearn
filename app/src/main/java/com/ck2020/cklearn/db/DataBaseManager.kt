@@ -26,7 +26,7 @@ object DataBaseManager {
         mRealm.executeTransactionAsync({
             it.delete(AddressSingleBean::class.java)
             it.copyToRealmOrUpdate(addressInfo)
-        }, { Log.i("gw", "success${1}") }, {
+        }, { }, {
             it.printStackTrace()
         })
     }

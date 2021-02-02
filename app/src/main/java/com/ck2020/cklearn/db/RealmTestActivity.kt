@@ -23,7 +23,7 @@ class RealmTestActivity : AppCompatActivity() {
 
         mBind.btnWrite.setOnClickListener {
             val list = ArrayList<AddressSingleBean>()
-            for (i in 0..10) {
+            for (i in 1..10) {
                 val address = AddressSingleBean()
                 address.areaSid = "$i"
                 address.areaName = "地址${i}"
