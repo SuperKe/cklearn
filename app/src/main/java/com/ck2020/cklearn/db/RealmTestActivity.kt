@@ -43,4 +43,9 @@ class RealmTestActivity : AppCompatActivity() {
             })
         }
     }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        DataBaseManager.close()
+    }
 }
