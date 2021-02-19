@@ -1,6 +1,9 @@
 package com.ck2020.cklearn.db
 
+import android.content.Context
+import android.database.sqlite.SQLiteDatabase
 import android.util.Log
+import com.ck2020.cklearn.db.helper.DbHelper
 import com.ck2020.cklearn.db.realm.AddressSingleBean
 import io.realm.Realm
 
@@ -34,9 +37,13 @@ object DataBaseManager {
     fun executeAddressFind(dbCall: DbImp<List<AddressSingleBean>>) {
         //异步
         mRealm.executeTransactionAsync({
-            dbCall.call(it.where(AddressSingleBean::class.java).findAll().toMutableList())
+            dbCall.call(it.where(AddressSingleBean::class.java).findAll())
         }, { Log.i("gw", "success") }, {
             it.printStackTrace()
         })
+    }
+
+    fun createDb(context: Context?): DbHelper {
+        return DbHelper(context, DbHelper.db_name, null, 1)
     }
 }
