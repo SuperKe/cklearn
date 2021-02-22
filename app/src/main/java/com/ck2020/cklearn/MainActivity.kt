@@ -9,6 +9,7 @@ import com.ck2020.cklearn.customview.volumeview.VolumeActivity
 import com.ck2020.cklearn.databinding.ActivityMainBinding
 import com.ck2020.cklearn.file_read.FileMainActivity
 import com.ck2020.cklearn.handler_demo.HandlerTestActivity
+import com.ck2020.cklearn.image_compress.ImageCompressActivity
 import com.ck2020.cklearn.kt.FuncActivity
 import com.ck2020.cklearn.sliding_conflict.NestScrollRecyclerActivity
 import com.ck2020.cklearn.volatile_demo.VolatileDemoActivity
@@ -52,6 +53,9 @@ class MainActivity : AppCompatActivity() {
         }
         binding.btFile.setOnClickListener {
             startActivity(FileMainActivity::class.java)
+        }
+        binding.btnImageCompress.setOnClickListener {
+            startActivity(ImageCompressActivity::class.java)
         }
     }
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,62 +7,74 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/bt_verification"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="验证码控件" />
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/bt_volume"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="音量控件" />
+        <Button
+            android:id="@+id/bt_verification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="验证码控件" />
 
-    <Button
-        android:id="@+id/bt_sliding_conflict"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="NestScroll_RecyclerView导致adapter无限加载"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_volume"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="音量控件" />
 
-    <Button
-        android:id="@+id/bt_volatile_demo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="volatile Demo"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_sliding_conflict"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="NestScroll_RecyclerView导致adapter无限加载"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_handler_demo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="handler Demo"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_volatile_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="volatile Demo"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_result_api"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="result_api"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_handler_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="handler Demo"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_coroutine"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="coroutine"
-        android:textAllCaps="false" />
+        <Button
+            android:id="@+id/bt_result_api"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="result_api"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_expand_high"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="拓展函数/高阶函数" />
+        <Button
+            android:id="@+id/bt_coroutine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="coroutine"
+            android:textAllCaps="false" />
 
-    <Button
-        android:id="@+id/bt_file"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="文件操作" />
-</LinearLayout>
+        <Button
+            android:id="@+id/bt_expand_high"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="拓展函数/高阶函数" />
+
+        <Button
+            android:id="@+id/bt_file"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="文件操作" />
+
+        <Button
+            android:id="@+id/btn_image_compress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="recyclerView图片优化" />
+    </LinearLayout>
+</ScrollView>
