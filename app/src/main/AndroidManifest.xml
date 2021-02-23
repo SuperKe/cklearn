@@ -15,8 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".image_compress.ImageCompressActivity"></activity>
-        <activity android:name=".viewbindrecycler.ViewBindingRecyclerActivity"></activity>
+        <activity android:name=".lazy.ViewPagerActivity"></activity>
+        <activity android:name=".image_compress.ImageCompressActivity" />
+        <activity android:name=".viewbindrecycler.ViewBindingRecyclerActivity" />
         <activity android:name=".db.DbHelperTestActivity" />
         <activity android:name=".db.RealmTestActivity" />
         <activity android:name=".file_read.FileMainActivity" />
