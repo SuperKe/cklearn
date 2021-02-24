@@ -78,7 +78,6 @@ public abstract class LazyFragment extends Fragment {
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
         if (isViewCreated) {
-            Log.i(TAG, getClass().getSimpleName() + "====>setUserVisibleHint");
             if (!isUserVisibleHint && isVisibleToUser) {
                 //从不可见->可见，加载数据
                 dispatchVisibleStatus(true);
@@ -93,8 +92,8 @@ public abstract class LazyFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        Log.i(TAG, getClass().getSimpleName() + "====>onResume");
         //当从其他界面回到该fragment触发
+        Log.i(TAG, getClass().getSimpleName() + "加载====>onResume");
         if (isUserVisibleHint && getUserVisibleHint()) {
             dispatchVisibleStatus(true);
         }
@@ -103,8 +102,8 @@ public abstract class LazyFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
-        Log.i(TAG, getClass().getSimpleName() + "====>onPause");
         //当从该fragment跳出至其他界面触发
+        Log.i(TAG, getClass().getSimpleName() + "暂停====>onPause");
         if (isUserVisibleHint && !getUserVisibleHint()) {
             dispatchVisibleStatus(false);
         }
