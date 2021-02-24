@@ -76,5 +76,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="recyclerView图片优化" />
+
+        <Button
+            android:id="@+id/btn_lazy_load"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ViewPager+Fragment懒加载" />
     </LinearLayout>
 </ScrollView>
