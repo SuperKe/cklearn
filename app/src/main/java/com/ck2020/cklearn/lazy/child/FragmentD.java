@@ -1,5 +1,6 @@
 package com.ck2020.cklearn.lazy.child;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -22,5 +23,8 @@ public class FragmentD extends LazyFragment {
     public void initView(View rootView) {
         TextView tvMain = rootView.findViewById(R.id.tv_main);
         tvMain.setText("D");
+        tvMain.setOnClickListener(v -> {
+            startActivity(new Intent(getActivity(), ChildStartActivity.class));
+        });
     }
 }

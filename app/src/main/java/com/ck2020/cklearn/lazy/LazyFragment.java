@@ -95,7 +95,7 @@ public abstract class LazyFragment extends Fragment {
         super.onResume();
         Log.i(TAG, getClass().getSimpleName() + "====>onResume");
         //当从其他界面回到该fragment触发
-        if (!isUserVisibleHint && getUserVisibleHint()) {
+        if (isUserVisibleHint && getUserVisibleHint()) {
             dispatchVisibleStatus(true);
         }
     }
