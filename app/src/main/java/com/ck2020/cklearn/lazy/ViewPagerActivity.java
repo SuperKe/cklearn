@@ -15,6 +15,9 @@ import com.ck2020.cklearn.databinding.ActivityViewPagerBinding;
 import java.util.ArrayList;
 import java.util.List;
 
+import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
+import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_SET_USER_VISIBLE_HINT;
+
 /**
  * 懒加载的viewpager+fragment
  * 嵌套模式,结构
@@ -43,7 +46,7 @@ public class ViewPagerActivity extends AppCompatActivity {
         textViewList.add(mViewBind.tvThree);
         textViewList.add(mViewBind.tvFour);
 
-        FragmentPagerAdapter mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
+        FragmentPagerAdapter mAdapter = new FragmentPagerAdapter(getSupportFragmentManager(),BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
@@ -56,7 +59,7 @@ public class ViewPagerActivity extends AppCompatActivity {
             }
         };
         mViewBind.viewPager.setAdapter(mAdapter);
-        mViewBind.viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        mViewBind.viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 

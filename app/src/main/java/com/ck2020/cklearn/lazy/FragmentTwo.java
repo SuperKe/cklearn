@@ -9,7 +9,7 @@ import com.ck2020.cklearn.R;
  * @create 2021/2/23
  * @Describe
  */
-public class FragmentTwo extends LazyFragment {
+public class FragmentTwo extends LazyFragmentX {
 
     @Override
     public int getLayout() {

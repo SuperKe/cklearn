@@ -5,13 +5,14 @@ import android.widget.TextView;
 
 import com.ck2020.cklearn.R;
 import com.ck2020.cklearn.lazy.LazyFragment;
+import com.ck2020.cklearn.lazy.LazyFragmentX;
 
 /**
  * @author chenke
  * @create 2021/2/23
  * @Describe
  */
-public class FragmentA extends LazyFragment {
+public class FragmentA extends LazyFragmentX {
 
     @Override
     public int getLayout() {

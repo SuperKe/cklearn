@@ -17,12 +17,14 @@ import com.ck2020.cklearn.lazy.child.FragmentD;
 import java.util.ArrayList;
 import java.util.List;
 
+import static androidx.fragment.app.FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT;
+
 /**
  * @author chenke
  * @create 2021/2/23
  * @Describe
  */
-public class FragmentOne extends LazyFragment {
+public class FragmentOne extends LazyFragmentX {
 
     @Override
     public int getLayout() {
@@ -49,7 +51,7 @@ public class FragmentOne extends LazyFragment {
         tvList.add(tvB);
         tvList.add(tvC);
         tvList.add(tvD);
-        FragmentPagerAdapter mAdapter = new FragmentPagerAdapter(getChildFragmentManager()) {
+        FragmentPagerAdapter mAdapter = new FragmentPagerAdapter(getChildFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
@@ -58,7 +60,7 @@ public class FragmentOne extends LazyFragment {
 
             @Override
             public int getCount() {
-                return tvList.size();
+                return fragmentList.size();
             }
         };
         mViewPage.setAdapter(mAdapter);
