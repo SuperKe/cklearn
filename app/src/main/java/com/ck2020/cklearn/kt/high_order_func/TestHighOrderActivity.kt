@@ -1,7 +1,7 @@
 package com.ck2020.cklearn.kt.high_order_func
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.util.ToastUtils
 import com.ck2020.cklearn.databinding.ActivityHighOrderBinding
 

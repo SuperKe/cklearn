@@ -4,7 +4,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.ck2020.cklearn.coroutine.ApiServer
-import com.ck2020.cklearn.coroutine.call.ApiError
 import com.ck2020.cklearn.coroutine.call.ApiResult
 import kotlinx.coroutines.launch
 

@@ -1,7 +1,5 @@
 package com.ck2020.cklearn.kt.list
 
-import java.util.*
-
 /**
  * @author chenke
  * @create 2021/2/1

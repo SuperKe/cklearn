@@ -1,8 +1,8 @@
 package com.ck2020.cklearn.kt
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.ck2020.cklearn.databinding.ActivityFuncBinding
 import com.ck2020.cklearn.kt.expand_func.TestExpandActivity
 import com.ck2020.cklearn.kt.high_order_func.TestHighOrderActivity

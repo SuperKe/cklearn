@@ -1,7 +1,6 @@
 package com.ck2020.cklearn.db
 
 import android.content.Context
-import android.database.sqlite.SQLiteDatabase
 import android.util.Log
 import com.ck2020.cklearn.db.helper.DbHelper
 import com.ck2020.cklearn.db.realm.AddressSingleBean

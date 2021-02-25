@@ -38,9 +38,9 @@ public class FragmentOne extends LazyFragment {
     public void initView(View rootView) {
         mViewPage = rootView.findViewById(R.id.view_pager);
         tvA = rootView.findViewById(R.id.tv_a);
-        tvB = rootView.findViewById(R.id.tv_a);
-        tvC = rootView.findViewById(R.id.tv_a);
-        tvD = rootView.findViewById(R.id.tv_a);
+        tvB = rootView.findViewById(R.id.tv_b);
+        tvC = rootView.findViewById(R.id.tv_c);
+        tvD = rootView.findViewById(R.id.tv_d);
         fragmentList.add(new FragmentA());
         fragmentList.add(new FragmentB());
         fragmentList.add(new FragmentC());

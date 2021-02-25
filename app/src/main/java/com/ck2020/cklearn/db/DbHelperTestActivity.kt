@@ -1,8 +1,7 @@
 package com.ck2020.cklearn.db
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.ck2020.cklearn.R
+import androidx.appcompat.app.AppCompatActivity
 import com.ck2020.cklearn.databinding.ActivityDbHelperTestBinding
 
 class DbHelperTestActivity : AppCompatActivity() {

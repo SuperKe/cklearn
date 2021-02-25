@@ -6,11 +6,12 @@ import androidx.appcompat.app.AppCompatActivity
 import com.blankj.utilcode.constant.PermissionConstants
 import com.blankj.utilcode.util.PermissionUtils
 import com.ck2020.cklearn.databinding.ActivityFileTestBinding
-import kotlinx.coroutines.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import java.io.BufferedInputStream
 import java.io.BufferedOutputStream
-import java.io.BufferedWriter
-import java.io.StringReader
 
 class FileTestActivity : AppCompatActivity() {
     private lateinit var mBinding: ActivityFileTestBinding

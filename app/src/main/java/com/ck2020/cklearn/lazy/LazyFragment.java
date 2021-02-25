@@ -1,136 +1,99 @@
 package com.ck2020.cklearn.lazy;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Lifecycle;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+
 import java.util.List;
 
 /**
- * A simple {@link Fragment} subclass.
- * create an instance of this fragment.
- * 这里来实现一个懒加载的fragment
- * 懒加载是一种算法，因为viewpager(非viewpager2)的预加载无法避免，所有
- * 懒加载是预加载的一种优化，对viewpager内部的arrayList<fragment>的内存优化
- *
  * @author chenke
- * @Describe 预加载优化，懒加载
+ * @create 2021/2/25
+ * @Describe
  */
 public abstract class LazyFragment extends Fragment {
-    public final String TAG = "lazy_fragment";
-    /**
-     * 视图是否已经创建
-     */
-    private boolean isViewCreated = false;
-    /**
-     * 当前的fragment是否可见
-     */
-    private boolean isUserVisibleHint = false;
+    private final String TAG = "lazy_fragment";
+    private View mRootView;
 
-    private View rootView;
+    private boolean viewCreated = false;
 
+    private boolean currentVisibleStatus = false;
+
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        Log.i(TAG, getClass().getSimpleName() + "====>onCreateView");
-        if (rootView == null) {
-            rootView = inflater.inflate(getLayout(), container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if (mRootView == null) {
+            mRootView = inflater.inflate(getLayout(), container, false);
         }
-        initView(rootView);
-        isViewCreated = true;
-        //第一次分发
+        initView(mRootView);
+        viewCreated = true;
+        Log.i(TAG, getClass().getSimpleName() + "====>onCreateView");
         if (getUserVisibleHint()) {
             setUserVisibleHint(true);
         }
-        return rootView;
+        return mRootView;
     }
 
-    /**
-     * 抽象子类的布局文件
-     *
-     * @return
-     */
     public abstract int getLayout();
 
-    /**
-     * 子类实现，提供布局的rootView
-     *
-     * @param rootView
-     */
-    public abstract void initView(View rootView);
+    public abstract void initView(View view);
 
-    /**
-     * 该方法在androidx已经被废弃
-     *
-     * @param isVisibleToUser
-     * @deprecated {@link FragmentTransaction#setMaxLifecycle(Fragment, Lifecycle.State)}
-     * 这里使用该函数实现懒加载
-     * 可见状态发生状态会回调该函数
-     */
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if (isViewCreated) {
-            if (!isUserVisibleHint && isVisibleToUser) {
-                //从不可见->可见，加载数据
-                dispatchVisibleStatus(true);
-            } else if (isUserVisibleHint && !isVisibleToUser) {
-                //从可见->不可见，停止加载数据
-                dispatchVisibleStatus(false);
+        Log.i(TAG, getClass().getSimpleName() + "====>setUserVisibleHint");
+        if (viewCreated) {
+            if (!currentVisibleStatus && isVisibleToUser) {
+                dispatchUserVisibleStatus(true);
+            } else if (currentVisibleStatus && !isVisibleToUser) {
+                dispatchUserVisibleStatus(false);
             }
         }
     }
 
+    public void dispatchUserVisibleStatus(boolean isUserVisibleStatus) {
+        currentVisibleStatus = isUserVisibleStatus;
+        if (isUserVisibleStatus) {
+            onStartLoad();
+        } else {
+            onStopLoad();
+        }
+        //在嵌套模式下，让子类的fragment进行分发
+        FragmentManager fm = getChildFragmentManager();
+        List<Fragment> fragments = fm.getFragments();
+        if (fragments.size() > 0) {
+            for (Fragment fragment : fragments) {
+                if (fragment instanceof LazyFragment) {
+                    if (fragment.getUserVisibleHint()) {
+                        ((LazyFragment) fragment).dispatchUserVisibleStatus(true);
+                    }
+                }
+            }
+        }
+    }
 
     @Override
     public void onResume() {
         super.onResume();
-        //当从其他界面回到该fragment触发
-        Log.i(TAG, getClass().getSimpleName() + "加载====>onResume");
-        if (isUserVisibleHint && getUserVisibleHint()) {
-            dispatchVisibleStatus(true);
+        if (getUserVisibleHint() && !currentVisibleStatus) {
+            Log.i(TAG, getClass().getSimpleName() + "加载数据====>onResume");
+            dispatchUserVisibleStatus(true);
         }
     }
 
     @Override
     public void onPause() {
         super.onPause();
-        //当从该fragment跳出至其他界面触发
-        Log.i(TAG, getClass().getSimpleName() + "暂停====>onPause");
-        if (isUserVisibleHint && !getUserVisibleHint()) {
-            dispatchVisibleStatus(false);
-        }
-    }
-
-    /**
-     * 分发可见与不可见状态
-     */
-    public void dispatchVisibleStatus(boolean isVisibleStatus) {
-        if (isVisibleStatus) {
-            onStartLoad();
-        } else {
-            onStopLoad();
-        }
-        //数据加载过后，更新当前fragment的可见状态
-        isUserVisibleHint = isVisibleStatus;
-        //分发父级的fragment
-        FragmentManager fm = getChildFragmentManager();
-        List<Fragment> childFragments = fm.getFragments();
-        if (childFragments.size() > 0) {
-            for (Fragment fragment : childFragments) {
-                if (fragment instanceof LazyFragment) {
-                    if (fragment.getUserVisibleHint()) {
-                        ((LazyFragment) fragment).dispatchVisibleStatus(isVisibleStatus);
-                    }
-                }
-            }
+        if (getUserVisibleHint() && currentVisibleStatus) {
+            Log.i(TAG, getClass().getSimpleName() + "暂停加载====>onPause");
+            dispatchUserVisibleStatus(false);
         }
     }
 

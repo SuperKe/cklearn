@@ -1,9 +1,8 @@
 package com.ck2020.cklearn.viewbindrecycler
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ck2020.cklearn.R
 import com.ck2020.cklearn.databinding.ActivityViewBindingRecyclerBinding
 
 class ViewBindingRecyclerActivity : AppCompatActivity() {

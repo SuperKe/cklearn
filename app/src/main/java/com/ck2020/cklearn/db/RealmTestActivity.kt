@@ -6,7 +6,6 @@ import com.ck2020.cklearn.databinding.ActivityRealmTestBinding
 import com.ck2020.cklearn.db.realm.AddressSingleBean
 import io.realm.Realm
 import io.realm.RealmConfiguration
-import java.lang.StringBuilder
 
 class RealmTestActivity : AppCompatActivity() {
     private lateinit var mBind: ActivityRealmTestBinding

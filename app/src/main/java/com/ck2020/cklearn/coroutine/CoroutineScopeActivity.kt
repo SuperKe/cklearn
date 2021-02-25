@@ -1,8 +1,7 @@
 package com.ck2020.cklearn.coroutine
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModel
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.ck2020.cklearn.R
 import com.ck2020.cklearn.coroutine.viewmodel.MainViewModel

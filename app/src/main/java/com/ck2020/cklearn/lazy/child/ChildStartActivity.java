@@ -1,8 +1,8 @@
 package com.ck2020.cklearn.lazy.child;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.ck2020.cklearn.R;
 

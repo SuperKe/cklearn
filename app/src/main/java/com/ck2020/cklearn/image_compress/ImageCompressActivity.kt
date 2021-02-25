@@ -1,6 +1,5 @@
 package com.ck2020.cklearn.image_compress
 
-import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup

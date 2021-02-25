@@ -1,5 +1,8 @@
 package com.ck2020.cklearn.lazy;
 
+import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,11 +10,6 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-
-import com.ck2020.cklearn.R;
 import com.ck2020.cklearn.databinding.ActivityViewPagerBinding;
 
 import java.util.ArrayList;
@@ -45,7 +43,7 @@ public class ViewPagerActivity extends AppCompatActivity {
         textViewList.add(mViewBind.tvThree);
         textViewList.add(mViewBind.tvFour);
 
-        FragmentStatePagerAdapter mAdapter = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
+        FragmentPagerAdapter mAdapter = new FragmentPagerAdapter(getSupportFragmentManager()) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
