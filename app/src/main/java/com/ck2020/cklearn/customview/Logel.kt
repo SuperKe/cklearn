@@ -13,5 +13,10 @@ class Logel {
         fun i(msg: String) {
             Log.i("gw", msg)
         }
+
+        @JvmStatic
+        fun i(msg: Int) {
+            Log.i("gw", "$msg")
+        }
     }
 }

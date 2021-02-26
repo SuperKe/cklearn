@@ -82,8 +82,8 @@ public abstract class LazyFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        Log.i(TAG, getClass().getSimpleName() + "===>onResume");
         if (getUserVisibleHint() && !currentVisibleStatus) {
-            Log.i(TAG, getClass().getSimpleName() + "加载数据====>onResume");
             dispatchUserVisibleStatus(true);
         }
     }
@@ -91,10 +91,28 @@ public abstract class LazyFragment extends Fragment {
     @Override
     public void onPause() {
         super.onPause();
+        Log.i(TAG, getClass().getSimpleName() + "===>onPause");
         if (getUserVisibleHint() && currentVisibleStatus) {
-            Log.i(TAG, getClass().getSimpleName() + "暂停加载====>onPause");
             dispatchUserVisibleStatus(false);
         }
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        Log.i(TAG, getClass().getSimpleName() + "===>onDetach");
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.i(TAG, getClass().getSimpleName() + "===>onDestroyView");
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        Log.i(TAG, getClass().getSimpleName() + "===>onDestroy");
     }
 
     /**

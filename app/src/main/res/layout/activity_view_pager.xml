@@ -6,20 +6,10 @@
     android:orientation="vertical"
     tools:context=".lazy.ViewPagerActivity">
 
-    <TextView
-        android:id="@+id/tv_title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="10dp"
-        android:text="标题"
-        android:textColor="#000000"
-        android:textSize="16sp" />
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1" />
 
     <LinearLayout

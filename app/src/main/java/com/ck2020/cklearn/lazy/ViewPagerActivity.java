@@ -37,16 +37,18 @@ public class ViewPagerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         mViewBind = ActivityViewPagerBinding.inflate(getLayoutInflater());
         setContentView(mViewBind.getRoot());
+
         fragmentList.add(new FragmentOne());
         fragmentList.add(new FragmentTwo());
         fragmentList.add(new FragmentThree());
         fragmentList.add(new FragmentFour());
+
         textViewList.add(mViewBind.tvOne);
         textViewList.add(mViewBind.tvTwo);
         textViewList.add(mViewBind.tvThree);
         textViewList.add(mViewBind.tvFour);
 
-        FragmentPagerAdapter mAdapter = new FragmentPagerAdapter(getSupportFragmentManager(),BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
+        FragmentStatePagerAdapter mAdapter = new FragmentStatePagerAdapter(getSupportFragmentManager(), BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
             @NonNull
             @Override
             public Fragment getItem(int position) {
@@ -72,7 +74,6 @@ public class ViewPagerActivity extends AppCompatActivity {
                 }
                 TextView tvChecked = textViewList.get(position);
                 tvChecked.setTextSize(20);
-                mViewBind.tvTitle.setText("第" + ++position + "页");
             }
 
             @Override
