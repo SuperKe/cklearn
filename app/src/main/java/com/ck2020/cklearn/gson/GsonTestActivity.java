@@ -30,7 +30,7 @@ public class GsonTestActivity extends AppCompatActivity {
         String userBeanJson1 = "{\"userAge\":26}";
         mBinding.btnGson.setOnClickListener(v -> {
             //UserBean定义了kotlin的非空对象，在进行解析的时候不会报错，但是调用的时候会报错
-            UserBean userBean = new Gson().fromJson(userBeanJson1, UserBean.class);
+            UserBeanJ userBean = new Gson().fromJson(userBeanJson1, UserBeanJ.class);
             mBinding.tvGson.setText(userBean.getUserAge() + "");
             Logel.i(userBean.getUserAge());//不会null crash
 //            Logel.i(userBean.getUserName());//null crash 一般是java:userBean.getUserName.xxx  null crash
