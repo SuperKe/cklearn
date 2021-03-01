@@ -32,7 +32,7 @@ public abstract class LazyFragmentX extends Fragment {
 
     private View mRootView;
     /**
-     * 当前的activity是否可见
+     * 当前的activity是否已经可见
      */
     private boolean currentVisibleStatus = false;
 
